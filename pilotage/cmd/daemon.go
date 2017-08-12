@@ -93,11 +93,16 @@ func init() {
 
 // runDaemonFlow is
 func runDaemonFlow(cmd *cobra.Command, args []string) {
+<<<<<<< HEAD
 	if len(args) <= 0 {
+=======
+	if len(args) <= 0 || utils.IsFileExist(args[0]) == false {
+>>>>>>> fe0fde612890a065566533cfe2e8c210ea1994d5
 		cmd.Println(Red("The orchestration flow file is required."))
 		os.Exit(1)
 	}
 
+<<<<<<< HEAD
 	flowFile := args[0]
 
 	if utils.IsFileExist(flowFile) == false {
@@ -107,6 +112,10 @@ func runDaemonFlow(cmd *cobra.Command, args []string) {
 
 	m := macaron.New()
 	middleware.SetRunDaemonMiddlewares(m, cfgFile, flowFile)
+=======
+	m := macaron.New()
+	middleware.SetRunDaemonMiddlewares(m, cfgFile, args[0])
+>>>>>>> fe0fde612890a065566533cfe2e8c210ea1994d5
 	router.SetRunDaemonRouters(m)
 
 	var server *http.Server
@@ -173,11 +182,16 @@ func runDaemonFlow(cmd *cobra.Command, args []string) {
 
 // startDaemonFlow is
 func startDaemonFlow(cmd *cobra.Command, args []string) {
+<<<<<<< HEAD
 	if len(args) <= 0 {
+=======
+	if len(args) <= 0 || utils.IsFileExist(args[0]) == false {
+>>>>>>> fe0fde612890a065566533cfe2e8c210ea1994d5
 		cmd.Println(Red("The orchestration flow file is required."))
 		os.Exit(1)
 	}
 
+<<<<<<< HEAD
 	flowFile := args[0]
 
 	if utils.IsFileExist(flowFile) == false {
@@ -185,6 +199,8 @@ func startDaemonFlow(cmd *cobra.Command, args []string) {
 		os.Exit(1)
 	}
 
+=======
+>>>>>>> fe0fde612890a065566533cfe2e8c210ea1994d5
 	m := macaron.New()
 	middleware.SetStartDaemonMiddlewares(m, cfgFile)
 	router.SetStartDaemonRouters(m)

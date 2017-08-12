@@ -16,6 +16,21 @@ limitations under the License.
 
 package main
 
+<<<<<<< HEAD
 func main() {
 
+=======
+import (
+	"fmt"
+	"os"
+
+	"github.com/Huawei/containerops/assembling/cmd"
+)
+
+func main() {
+	if err := cmd.RootCmd.Execute(); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+>>>>>>> fe0fde612890a065566533cfe2e8c210ea1994d5
 }

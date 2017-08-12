@@ -16,15 +16,58 @@ limitations under the License.
 
 package cmd
 
+<<<<<<< HEAD
 import "github.com/spf13/cobra"
+=======
+import (
+	"fmt"
+	"os"
+
+	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
+
+	"github.com/Huawei/containerops/common"
+)
+
+var cfgFile string
+var verbose, timestamp bool
+>>>>>>> fe0fde612890a065566533cfe2e8c210ea1994d5
 
 // RootCmd is
 var RootCmd = &cobra.Command{
 	Use:   "singular",
+<<<<<<< HEAD
 	Short: "The distribution system ops tool",
 	Long:  ``,
 }
 
 func init() {
 
+=======
+	Short: "Singular is deploy and operation tools for ContainerOps platform.",
+	Long: `Singular design for deploy and operation ContainerOps platform,
+mostly focus on Kubernetes, Prometheus, others in the Cloud Native technology stack.
+We are trying to deploy stack cross cloud, OpenStack, bare metals. `,
+}
+
+// init()
+func init() {
+	cobra.OnInitialize(initConfig)
+
+	RootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "Configuration file path")
+	RootCmd.PersistentFlags().BoolVar(&verbose, "verbose", false, "When verbose is true, the engine will print all logs.")
+	RootCmd.PersistentFlags().BoolVar(&timestamp, "timestamp", false, "Show logs with timestamp. ")
+
+	viper.BindPFlag("config", RootCmd.Flags().Lookup("config"))
+	viper.BindPFlag("verbose", RootCmd.Flags().Lookup("verbose"))
+	viper.BindPFlag("timestamp", RootCmd.Flags().Lookup("timestamp"))
+}
+
+// initConfig reads in config file and ENV variables if set.
+func initConfig() {
+	if err := common.SetConfig(cfgFile); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+>>>>>>> fe0fde612890a065566533cfe2e8c210ea1994d5
 }

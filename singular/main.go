@@ -23,13 +23,24 @@ import (
 	"github.com/Huawei/containerops/singular/cmd"
 )
 
+<<<<<<< HEAD
+=======
+// init()
+>>>>>>> fe0fde612890a065566533cfe2e8c210ea1994d5
 func init() {
 
 }
 
+<<<<<<< HEAD
 func main() {
 	if err := cmd.RootCmd.Execute(); err != nil {
 		fmt.Println(err)
+=======
+// main()
+func main() {
+	if err := cmd.RootCmd.Execute(); err != nil {
+		fmt.Fprintf(os.Stderr, err.Error())
+>>>>>>> fe0fde612890a065566533cfe2e8c210ea1994d5
 		os.Exit(1)
 	}
 }

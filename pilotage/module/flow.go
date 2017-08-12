@@ -33,7 +33,11 @@ import (
 	"k8s.io/apimachinery/pkg/api/resource"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
+<<<<<<< HEAD
 	_ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
+=======
+	//_ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
+>>>>>>> fe0fde612890a065566533cfe2e8c210ea1994d5
 	"k8s.io/client-go/tools/clientcmd"
 
 	"github.com/Huawei/containerops/common/utils"

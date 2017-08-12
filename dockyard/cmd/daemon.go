@@ -46,7 +46,11 @@ var daemonCmd = &cobra.Command{
 	Long:  ``,
 }
 
+<<<<<<< HEAD
 // start Dockyard deamon sub command
+=======
+// start Dockyard daemon sub command
+>>>>>>> fe0fde612890a065566533cfe2e8c210ea1994d5
 var startDaemonCmd = &cobra.Command{
 	Use:   "start",
 	Short: "Start Dockyard's REST API daemon.",
@@ -54,7 +58,11 @@ var startDaemonCmd = &cobra.Command{
 	Run:   startDeamon,
 }
 
+<<<<<<< HEAD
 // stop Dockyard deamon sub command
+=======
+// stop Dockyard daemon sub command
+>>>>>>> fe0fde612890a065566533cfe2e8c210ea1994d5
 var stopDaemonCmd = &cobra.Command{
 	Use:   "stop",
 	Short: "stop Dockyard's REST API daemon.",
@@ -62,8 +70,13 @@ var stopDaemonCmd = &cobra.Command{
 	Run:   stopDaemon,
 }
 
+<<<<<<< HEAD
 // monitor Dockyard deamon sub command
 var monitorDeamonCmd = &cobra.Command{
+=======
+// monitor Dockyard daemon sub command
+var monitorDaemonCmd = &cobra.Command{
+>>>>>>> fe0fde612890a065566533cfe2e8c210ea1994d5
 	Use:   "monitor",
 	Short: "monitor Dockyard's REST API daemon.",
 	Long:  ``,
@@ -82,7 +95,11 @@ func init() {
 	// Add stop sub command
 	daemonCmd.AddCommand(stopDaemonCmd)
 	// Add daemon sub command
+<<<<<<< HEAD
 	daemonCmd.AddCommand(monitorDeamonCmd)
+=======
+	daemonCmd.AddCommand(monitorDaemonCmd)
+>>>>>>> fe0fde612890a065566533cfe2e8c210ea1994d5
 }
 
 // startDeamon() start Dockyard's REST API daemon.
@@ -157,7 +174,11 @@ func stopDaemon(cmd *cobra.Command, args []string) {
 
 }
 
+<<<<<<< HEAD
 // monitordAemon() monitor Dockyard's REST API deamon.
+=======
+// monitorDaemon() monitor Dockyard's REST API deamon.
+>>>>>>> fe0fde612890a065566533cfe2e8c210ea1994d5
 func monitorDaemon(cmd *cobra.Command, args []string) {
 
 }
